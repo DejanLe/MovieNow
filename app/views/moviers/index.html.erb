@@ -1,0 +1,48 @@
+<div class="space allmovie">
+  <div class="container">
+    <div class="row">
+
+
+    <% @moviers.each do |movier| %>
+    <div class="col-md-3">
+      <div class="card">
+        <div class="image-top">
+        <%= image_tag  movier.movierimage_url  if  movier.movierimage? %>
+        </div>
+        <div class="card-body">
+          <p>
+            <strong>Title:</strong>
+          <%= link_to movier.title , movier %>
+        </p>
+        <p>
+          <strong>Description:</strong>
+           <%=truncate(movier.description, length: 50) %>
+         </p>
+         <p>
+           <strong>Year:</strong>
+           <%= movier.year %>
+         </p>
+
+          <p > Category:  <strong class="badge badge-secondary"><%=  movier.category.name if movier.category  %></strong></p>
+
+         <p>
+           <strong>Director:</strong>
+           <%= movier.director %>
+         </p>
+         <p>
+           <strong>Actors:</strong>
+           <%= movier.actors %>
+         </p>
+          <p>
+           <strong> Post created:</strong>
+           <span   class="badge badge-secondary" >
+
+           <%= time_ago_in_words(movier.created_at) %> ago </span>
+         </p>
+         </div>
+       </div>
+       </div>
+    <% end %>
+  </div>
+</div>
+</div>

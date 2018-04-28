@@ -1,0 +1,19 @@
+<h1>Editing Movier</h1>
+
+
+<%= form_with(model: @movier, local: true ) do |form| %>
+    <%= form.file_field :movierimage %> <br>
+    <%= form.select  :category_id, @categories %> <br>
+    <%= form.text_field :title, id: :movier_title %> <br>
+    <%= form.text_area :description, id: :movier_description %> <br>
+    <%= form.date_select :year, id: :movier_year %> <br>
+    <%= form.text_field :director, id: :movier_director %> <br>
+    <%= form.text_area :actors, id: :movier_actors %><br>
+
+    <%= form.submit %>
+
+<% end %>
+
+
+<%= link_to 'Show', @movier %> |
+<%= link_to 'Back', moviers_path %>

@@ -1,0 +1,47 @@
+<%= form_with(model: movier, local: true ) do |form| %>
+  <% if movier.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(movier.errors.count, "error") %> prohibited this movier from being saved:</h2>
+
+      <ul>
+      <% movier.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+  <%= form.file_field :movierimage %>
+  </div>
+  <div class="field">
+    <%= select_tag(:category_id, options_for_select(@categories), prompt: "Choose movie category" ) %>
+  </div>
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, id: :movier_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description, id: :movier_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :year %>
+    <%= form.date_select :year, id: :movier_year %>
+  </div>
+
+  <div class="field">
+    <%= form.label :director %>
+    <%= form.text_field :director, id: :movier_director %>
+  </div>
+
+  <div class="field">
+    <%= form.label :actors %>
+    <%= form.text_area :actors, id: :movier_actors %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

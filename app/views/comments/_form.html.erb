@@ -1,0 +1,5 @@
+<%= form_for([@movier, @movier.comments.build]) do |f| %>
+  <%= f.text_area :body, class: "form-control", rows: '5', required: true %>
+  <br>
+  <%= f.submit class: "btn btn-outline-success" %>
+<% end %>

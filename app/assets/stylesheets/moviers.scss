@@ -1,0 +1,40 @@
+// Place all the styles related to the moviers controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.space{
+  margin-top: 5rem;
+}
+@media(max-width:50rem){
+  .space{
+    margin-top: 10rem;
+  }
+}
+img{
+  width: 100%;
+}
+body{
+  font-size: 85% !important;
+  font-family: "Nunito", sans-serif !important;
+  color: #000 !important;
+}
+.card{
+  box-shadow: 0 1rem 3rem #888;
+  line-height: 1;
+}
+.navbar-light{
+    box-shadow: 0 1rem 3rem #888;
+}
+.navbar-brand {
+    display: inline-block;
+    padding-top: 0.3125rem;
+    padding-bottom: 0.3125rem;
+    margin-right: 1rem;
+    font-size: 2rem !important;
+    line-height: inherit;
+    white-space: nowrap;
+    font-weight: 900;
+}
+strong{
+  color: #888;
+  font-style: italic;
+}

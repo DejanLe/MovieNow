@@ -1,0 +1,50 @@
+<div class="space allmovie">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8  mx-auto">
+        <div class="card">
+          <div class="card-body">
+
+
+ <%= image_tag (@movier.movierimage_url) if @movier.movierimage? %>
+<p>
+  <strong>Title:</strong>
+  <%= @movier.title %>
+</p>
+ <p class="badge badge-secondary">Category: <strong><%= @movier.category_id%></strong></p>
+<p>
+  <strong>Description:</strong>
+  <%= @movier.description %>
+</p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @movier.year %>
+</p>
+
+<p>
+  <strong>Director:</strong>
+  <%= @movier.director %>
+</p>
+
+<p>
+  <strong>Actors:</strong>
+  <%= @movier.actors %>
+</p>
+<%= link_to 'Edit', edit_movier_path(@movier),class: "btn btn-outline-success" %>
+ <%= link_to 'Destroy', @movier, method: :delete, data: { confirm: 'Are you sure?' } ,class: "btn btn-outline-danger" %>
+<%= link_to 'Back', moviers_path, class: "btn btn-outline-secondary" %>
+
+
+  <div class="comments">
+    <p><%= @movier.comments.count %> comments</p>
+    <%= render @movier.comments %>
+    <%= render "comments/form" %>
+  </div>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>

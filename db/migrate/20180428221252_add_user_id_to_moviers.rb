@@ -1,0 +1,5 @@
+class AddUserIdToMoviers < ActiveRecord::Migration[5.1]
+  def change
+    add_column :moviers, :user_id, :integer
+  end
+end

@@ -11,7 +11,8 @@
   <strong>Title:</strong>
   <%= @movier.title %>
 </p>
- <p class="badge badge-secondary">Category: <strong><%= @movier.category_id%></strong></p>
+<p > Category:  <strong class="badge badge-secondary"><%=  @movier.category.name if @movier.category  %></strong></p>
+
 <p>
   <strong>Description:</strong>
   <%= @movier.description %>

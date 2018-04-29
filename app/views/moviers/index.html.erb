@@ -10,35 +10,45 @@
         <%= image_tag  movier.movierimage_url  if  movier.movierimage? %>
         </div>
         <div class="card-body">
-          <p>
-            <strong>Title:</strong>
-          <%= link_to movier.title , movier %>
-        </p>
-        <p>
-          <strong>Description:</strong>
-           <%=truncate(movier.description, length: 50) %>
-         </p>
-         <p>
-           <strong>Year:</strong>
-           <%= movier.year %>
-         </p>
+          <a  class=" " data-toggle="collapse" href="#movier-<%= movier.id %>" role="button" aria-expanded="false" aria-controls="collapseExample">
+            <p>
+              <strong>Title:</strong>
+            <%=   movier.title   %>
+          </p>
+          </a>
 
-          <p > Category:  <strong class="badge badge-secondary"><%=  movier.category.name if movier.category  %></strong></p>
 
-         <p>
-           <strong>Director:</strong>
-           <%= movier.director %>
-         </p>
-         <p>
-           <strong>Actors:</strong>
-           <%= movier.actors %>
-         </p>
-          <p>
-           <strong> Post created:</strong>
-           <span   class="badge badge-secondary" >
+<div class="collapse" id="movier-<%= movier.id %>">
+  <div class="  card-body">
+    <p>
+      <strong>Description:</strong>
+       <%=truncate(movier.description, length: 50) %>
+     </p>
+     <p>
+       <strong>Year:</strong>
+       <%= movier.year %>
+     </p>
 
-           <%= time_ago_in_words(movier.created_at) %> ago </span>
-         </p>
+      <p > Category:  <strong class="badge badge-secondary"><%=  movier.category.name if movier.category  %></strong></p>
+
+     <p>
+       <strong>Director:</strong>
+       <%= movier.director %>
+     </p>
+     <p>
+       <strong>Actors:</strong>
+       <%= movier.actors %>
+     </p>
+      <p>
+       <strong> Post created:</strong>
+       <span   class="badge badge-secondary" >
+
+       <%= time_ago_in_words(movier.created_at) %> ago </span>
+     </p>
+     <p><%= link_to "Read more...", movier %>  </p>
+
+  </div>
+</div>
          </div>
        </div>
        </div>
